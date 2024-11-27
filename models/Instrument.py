@@ -14,12 +14,13 @@ class Instrument:
         return str(vars(self))
 
     @classmethod
-    def FromApiObject(cls, obj):
+    def fromApiObject(cls, obj):
+        # obj is JSON object
         return Instrument(
             obj['name'],
-            obj['inst_type'],
-            obj['display_name'],
-            obj['pip_location'],
-            obj['trade_units_precision'],
-            obj['margin_rate']
+            obj['type'],
+            obj['displayName'],
+            obj['pipLocation'],
+            obj['tradeUnitsPrecision'],
+            obj['marginRate']
         )
